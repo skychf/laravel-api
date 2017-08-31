@@ -1,0 +1,25 @@
+{
+    "name": "skychf/api",
+    "description": "A api package for the Laravel",
+    "keywords": [
+        "api",
+        "modelTrait"
+    ],
+    "authors": [
+        {
+            "name": "feng.chen",
+            "email": "skychf@qq.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Skychf\\Api\\": "src/"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
+    }
+}
