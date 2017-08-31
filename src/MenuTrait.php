@@ -55,4 +55,22 @@ trait MenuTrait
     {
         return $this->getRank($menus = null, $id = 0, $isAdmin = false, $userMenus = [], $withTrashed = true);
     }
+
+    /**
+     * 删除或还原
+     * @author skychf skychf@qq.com
+     * @param  Integer $id
+     * @return Array
+     */
+    public function deleteOrRestore($id)
+    {
+        $menu = $this->withTrashed()->findOrFail($id);
+        if ($menu->trashed()) {
+            $menu->restore();
+        } else {
+            $menu->delete();
+        }
+
+        return $this->getTrashedRank();
+    }
 }
